@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undangan – Ikatan Scooter Aren</title>
+  <meta name="description" content="Undangan digital untuk acara Ikatan Scooter Aren" />
+  <meta property="og:title" content="Undangan – Ikatan Scooter Aren" />
+  <meta property="og:description" content="Yuk hadir di acara kami!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Ikatan+Scooter+Aren" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0ea5e9; /* biru scooter */
+      --accent: #f59e0b;  /* kuning retro */
+      --bg: #0b1220;      /* gelap elegan */
+      --card: #121a2b;    /* kartu */
+      --text: #e5e7eb;    /* teks terang */
+      --muted: #9ca3af;   /* teks redup */
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: inherit; }
+    .container { max-width: 980px; margin: 0 auto; padding: 20px; }
+    .hero { position: relative; padding: 56px 20px 32px; border-radius: 24px; background: radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,.25), transparent 60%),
+                                     radial-gradient(900px 500px at 110% -20%, rgba(245,158,11,.18), transparent 60%),
+                                     linear-gradient(180deg, #0b1220 0%, #0e1628 100%); overflow: hidden; }
+    .badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); font-size: 14px; color: var(--muted); }
+    .logo { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #0ea5e9; color: #fff; font-weight: 700; }
+    .title { margin: 18px 0 6px; font-size: clamp(28px, 5vw, 48px); line-height: 1.1; font-weight: 700; }
+    .subtitle { margin: 0 0 18px; font-size: clamp(16px, 2.5vw, 20px); color: var(--muted); }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0 10px; }
+    .pill { border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 14px; background: rgba(255,255,255,.04); }
+    .pill b { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+    .pill span { font-weight: 600; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .btn { cursor: pointer; border: 0; padding: 12px 16px; border-radius: 12px; font-weight: 600; transition: transform .08s ease, box-shadow .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--primary); color: #0b1220; }
+    .btn-ghost { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid rgba(255,255,255,.12); }
+
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+    .section { margin: 28px 0; }
+    .section h2 { margin: 0 0 10px; font-size: 22px; }
+    .muted { color: var(--muted); }
+
+    .countdown { display: flex; gap: 10px; margin-top: 10px; }
+    .cd-box { text-align: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); padding: 10px 12px; border-radius: 12px; min-width: 66px; }
+    .cd-box .num { font-size: 22px; font-weight: 700; }
+    .cd-box .lbl { font-size: 12px; color: var(--muted); }
+
+    .timeline { display: grid; gap: 10px; }
+    .tl { display: grid; grid-template-columns: 90px 1fr; gap: 12px; align-items: start; }
+    .tl time { font-weight: 700; color: var(--accent); }
+
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 12px; }
+
+    .footer { text-align: center; color: var(--muted); font-size: 13px; margin: 26px 0 10px; }
+
+    /* kecilkan di hp */
+    @media (max-width: 480px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO / HEADER -->
+    <header class="hero card">
+      <span class="badge">
+        <span class="logo" aria-hidden="true">🛵</span>
+        <span>Ikatan Scooter Aren</span>
+      </span>
+      <h1 class="title">Rolling & Gathering 2025</h1>
+      <p class="subtitle">Undangan resmi untuk seluruh anggota & komunitas sahabat. Mari merapat dan gas santai!</p>
+
+      <div class="meta">
+        <div class="pill"><b>Tanggal</b><span id="dateText">Minggu, 21 September 2025</span></div>
+        <div class="pill"><b>Waktu</b><span id="timeText">09:00 – selesai WIB</span></div>
+        <div class="pill"><b>Lokasi</b><span id="placeText">Taman Aren City, Tangerang</span></div>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><div class="num" id="dd">--</div><div class="lbl">Hari</div></div>
+        <div class="cd-box"><div class="num" id="hh">--</div><div class="lbl">Jam</div></div>
+        <div class="cd-box"><div class="num" id="mm">--</div><div class="lbl">Menit</div></div>
+        <div class="cd-box"><div class="num" id="ss">--</div><div class="lbl">Detik</div></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="addToCalendar">Simpan ke Kalender</button>
+        <a class="btn btn-ghost" id="mapsBtn" href="https://maps.google.com/?q=Taman+Aren+City" target="_blank" rel="noopener">Lihat Lokasi</a>
+        <a class="btn btn-ghost" id="rsvpBtn" href="https://forms.gle/xxxx" target="_blank" rel="noopener">RSVP</a>
+        <button class="btn btn-ghost" id="shareBtn">Bagikan</button>
+      </div>
+
+      <audio id="bgm" preload="none" controls style="margin-top:12px; width:100%">
+        <source src="music.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </header>
+
+    <!-- INFORMASI ACARA -->
+    <section class="section grid">
+      <div class="card">
+        <h2>Rundown</h2>
+        <div class="timeline">
+          <div class="tl"><time>09:00</time><div>Kumpul titik start, registrasi & briefing</div></div>
+          <div class="tl"><time>09:30</time><div>Rolling santai rute Aren – Bintaro</div></div>
+          <div class="tl"><time>11:00</time><div>Coffee break & games</div></div>
+          <div class="tl"><time>12:30</time><div>Pengumuman & doorprize</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Catatan</h2>
+        <ul>
+          <li>Wajib helm & perlengkapan berkendara.</li>
+          <li>Dresscode: Jaket komunitas / nuansa biru.</li>
+          <li>Isi bensin full sebelum start.</li>
+          <li>Hubungi CP: 08xx-xxxx-xxxx (Admin ISA).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GALERI / SPONSOR -->
+    <section class="section card">
+      <h2>Galeri & Sponsor</h2>
+      <p class="muted">Ganti gambar-gambar ini dengan dokumentasi komunitas atau logo sponsor.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?q=80&w=600&auto=format&fit=crop" alt="Scooter 1" />
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=600&auto=format&fit=crop" alt="Scooter 2" />
+        <img src="https://images.unsplash.com/photo-1502806942072-005b60a1115f?q=80&w=600&auto=format&fit=crop" alt="Scooter 3" />
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=600&auto=format&fit=crop" alt="Scooter 4" />
+        <img src="https://images.unsplash.com/photo-1509704192273-81a1a92b9a9e?q=80&w=600&auto=format&fit=crop" alt="Scooter 5" />
+        <img src="https://images.unsplash.com/photo-1524692664650-34c4fb95b2b1?q=80&w=600&auto=format&fit=crop" alt="Scooter 6" />
+      </div>
+    </section>
+
+    <!-- PETA EMBED -->
+    <section class="section card">
+      <h2>Peta Lokasi</h2>
+      <p class="muted">Sematkan link Google Maps lokasi kumpul.</p>
+      <div style="position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08);">
+        <iframe title="Peta" src="https://www.google.com/maps?q=Taman%20Aren%20City&t=&z=15&ie=UTF8&iwloc=&output=embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <p class="footer">© <span id="year"></span> Ikatan Scooter Aren • Sampai jumpa di lokasi! ✌️</p>
+  </div>
+
+  <script>
+    // ====== KONFIGURASI ACARA ======
+    // Ganti variabel-variabel ini sesuai kebutuhan.
+    const EVENT = {
+      title: 'Rolling & Gathering 2025',
+      org: 'Ikatan Scooter Aren',
+      // Format ISO string dengan zona WIB (+07:00). Contoh di bawah: 21 Sep 2025 09:00 WIB
+      startISO: '2025-09-21T09:00:00+07:00',
+      endISO:   '2025-09-21T13:00:00+07:00',
+      place: 'Taman Aren City, Tangerang',
+      maps: 'https://maps.google.com/?q=Taman+Aren+City',
+      rsvp: 'https://forms.gle/xxxx',
+    };
+
+    // Tampilkan tahun footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sinkronkan teks header jika diganti
+    document.querySelector('.title').textContent = EVENT.title;
+    document.querySelector('.badge span:last-child').textContent = EVENT.org;
+    document.getElementById('placeText').textContent = EVENT.place;
+    document.getElementById('mapsBtn').href = EVENT.maps;
+    document.getElementById('rsvpBtn').href = EVENT.rsvp;
+
+    // Tanggal ke teks lokal Indonesia
+    const start = new Date(EVENT.startISO);
+    const end   = new Date(EVENT.endISO);
+    const tanggalID = start.toLocaleDateString('id-ID', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+    const jamMulai  = start.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    const jamAkhir  = end.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('dateText').textContent = tanggalID;
+    document.getElementById('timeText').textContent = `${jamMulai} – ${jamAkhir} WIB`;
+
+    // ====== COUNTDOWN ======
+    const $dd = document.getElementById('dd');
+    const $hh = document.getElementById('hh');
+    const $mm = document.getElementById('mm');
+    const $ss = document.getElementById('ss');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = start - now;
+      if (diff <= 0) {
+        $dd.textContent = '00';
+        $hh.textContent = '00';
+        $mm.textContent = '00';
+        $ss.textContent = '00';
+        return;
+      }
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      $dd.textContent = String(d).padStart(2,'0');
+      $hh.textContent = String(h).padStart(2,'0');
+      $mm.textContent = String(m).padStart(2,'0');
+      $ss.textContent = String(s).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ====== ADD TO CALENDAR (ICS) ======
+    function buildICS() {
+      function dtICS(date) {
+        // ICS pakai UTC (Z) tanpa separator
+        const z = new Date(date).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/, 'Z');
+        return z;
+      }
+      const uid = crypto && crypto.randomUUID ? crypto.randomUUID() : (Date.now()+"@isa");
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Ikatan Scooter Aren//Undangan//ID',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${dtICS(new Date())}`,
+        `DTSTART:${dtICS(start)}`,
+        `DTEND:${dtICS(end)}`,
+        `SUMMARY:${EVENT.title}`,
+        `DESCRIPTION:Acara ${EVENT.org}. Info: ${location.href}`,
+        `LOCATION:${EVENT.place}`,
+        'END:VEVENT',
+        'END:VCALENDAR' 
+      ].join('\r\n');
+      return new Blob([ics], { type: 'text/calendar' });
+    }
+
+    document.getElementById('addToCalendar').addEventListener('click', () => {
+      const blob = buildICS();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'ISA-event.ics';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // ====== SHARE ======
+    document.getElementById('shareBtn').addEventListener('click', async () => {
+      const shareData = { title: document.title, text: 'Yuk hadir di acara Ikatan Scooter Aren!', url: location.href };
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          // fallback: copy to clipboard
+          await navigator.clipboard.writeText(location.href);
+          alert('Link undangan sudah disalin!');
+        }
+      } catch (e) {
+        await navigator.clipboard.writeText(location.href);
+        alert('Link undangan sudah disalin!');
+      }
+    });
+  </script>
+</body>
+</html>
